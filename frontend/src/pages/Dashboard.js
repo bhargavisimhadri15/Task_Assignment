@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import axios from 'axios';
+import { API_URL } from '../config';
 import { 
   Plus, 
   MagnifyingGlass, 
@@ -13,8 +14,6 @@ import {
   CaretRight,
   X
 } from '@phosphor-icons/react';
-
-const API_URL = process.env.REACT_APP_BACKEND_URL;
 
 // Post Card Component
 const PostCard = React.memo(({ post, currentUserId, onView, onEdit, onDelete }) => {

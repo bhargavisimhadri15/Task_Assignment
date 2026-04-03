@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ArrowLeft, Trash } from '@phosphor-icons/react';
 import { useAuth } from '../context/AuthContext';
-
-const API_URL = process.env.REACT_APP_BACKEND_URL;
+import { API_URL } from '../config';
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -148,4 +147,3 @@ export default function Profile() {
     </div>
   );
 }
-

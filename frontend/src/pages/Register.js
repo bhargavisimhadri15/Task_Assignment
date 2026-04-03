@@ -2,6 +2,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Eye, EyeSlash, ArrowRight } from '@phosphor-icons/react';
+import { API_URL } from '../config';
 
 function formatApiErrorDetail(detail) {
   if (detail == null) return "Something went wrong. Please try again.";
@@ -47,7 +48,7 @@ export default function Register() {
       navigate('/dashboard');
     } catch (err) {
       if (!err.response) {
-        setError(`Backend not reachable (${process.env.REACT_APP_BACKEND_URL}). Start backend and try again.`);
+        setError(`Backend not reachable (${API_URL}). Start backend and try again.`);
       } else {
         setError(formatApiErrorDetail(err.response?.data?.detail) || err.message);
       }

@@ -2,6 +2,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Eye, EyeSlash, ArrowRight } from '@phosphor-icons/react';
 import { useAuth } from '../context/AuthContext';
+import { API_URL } from '../config';
 
 function formatApiErrorDetail(detail) {
   if (detail == null) return 'Something went wrong. Please try again.';
